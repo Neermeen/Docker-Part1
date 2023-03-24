@@ -1,0 +1,9 @@
+docker container prune
+docker images prune
+docker images
+REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
+nginx         latest    904b8cb13b93   2 weeks ago     142MB
+hello-world   latest    feb5d9fea6a5   18 months ago   13.3kB
+docker ps -a
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS     NAMES
+ce9068cb65e4   nginx     "/docker-entrypoint.…"   23 minutes ago   Up 23 minutes   80/tcp    strange_williamson
