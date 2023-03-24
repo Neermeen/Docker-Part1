@@ -1,0 +1,13 @@
+docker run -d nginx  #starting first container
+docker run -d nginx  # starting second container
+docker run -d nginx  # starting third container
+#below shows output of docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS     NAMES
+9ba652422c8a   nginx     "/docker-entrypoint.…"   46 seconds ago   Up 45 seconds   80/tcp    keen_chatterjee
+99644fd40074   nginx     "/docker-entrypoint.…"   47 seconds ago   Up 47 seconds   80/tcp    elastic_ellis
+ce9068cb65e4   nginx     "/docker-entrypoint.…"   51 seconds ago   Up 50 seconds   80/tcp    strange_williamson
+docker stop 9ba652422c8a   #stop first container
+docker stop 99644fd40074   #stop second container
+#below shows output of docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS     NAMES
+ce9068cb65e4   nginx     "/docker-entrypoint.…"   20 minutes ago   Up 20 minutes   80/tcp    strange_williamson
