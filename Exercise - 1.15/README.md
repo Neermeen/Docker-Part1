@@ -4,7 +4,7 @@ With this image you can downloads youtube videos
 
 # Prerequisites
 
-In order to run in your system you need to install docker.
+INstall docker on your system
 
 ## Pull image:
 
