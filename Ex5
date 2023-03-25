@@ -1,0 +1,53 @@
+┌──(root㉿kali)-[~]
+└─# docker pull devopsdockeruh/simple-web-service:alpine
+alpine: Pulling from devopsdockeruh/simple-web-service
+ba3557a56b15: Pull complete
+1dace236434b: Pull complete
+4f4fb700ef54: Pull complete
+Digest: sha256:dd4d367476f86b7d7579d3379fe446ae5dfce25480903fb0966fc2e5257e0543
+Status: Downloaded newer image for devopsdockeruh/simple-web-service:alpine
+[docker.io/devopsdockeruh/simple-web-service:alpine](http://docker.io/devopsdockeruh/simple-web-service:alpine)
+
+┌──(root㉿kali)-[~]
+└─# docker images
+REPOSITORY                          TAG       IMAGE ID       CREATED         SIZE
+ubuntu                              latest    08d22c0ceb15   11 days ago     77.8MB
+fav_distro                          bionic    3941d3b032a8   11 days ago     63.1MB
+ubuntu                              18.04     3941d3b032a8   11 days ago     63.1MB
+nginx                               latest    904b8cb13b93   2 weeks ago     142MB
+hello-world                         latest    feb5d9fea6a5   18 months ago   13.3kB
+devopsdockeruh/simple-web-service   ubuntu    4e3362e907d5   2 years ago     83MB
+devopsdockeruh/simple-web-service   alpine    fd312adc88e0   2 years ago     15.7MB
+
+┌──(root㉿kali)-[~]
+└─# docker run -it -d --name five devopsdockeruh/simple-web-service:alpine
+deca3bae843e054a423d257baddfd101c6275fe5dbd108da7a6ea74294f03784
+
+┌──(root㉿kali)-[~]
+└─# docker ps
+CONTAINER ID   IMAGE                                      COMMAND                  CREATED             STATUS             PORTS     NAMES
+deca3bae843e   devopsdockeruh/simple-web-service:alpine   "/usr/src/app/server"    5 seconds ago       Up 3 seconds                 five
+100d545b14d9   ubuntu                                     "sh -c 'while true; …"   17 minutes ago      Up 17 minutes                vmt
+f7596f06125c   devopsdockeruh/simple-web-service:ubuntu   "/usr/src/app/server"    About an hour ago   Up About an hour             newm
+ce9068cb65e4   nginx                                      "/docker-entrypoint.…"   2 hours ago         Up 2 hours         80/tcp    strange_williamson
+
+┌──(root㉿kali)-[~]
+└─# docker exec -it five sh
+/usr/src/app # tail -f ./text.log
+Secret message is: 'You can find the source code here: [https://github.com/docker-hy](https://github.com/docker-hy)'
+2023-03-19 15:44:49 +0000 UTC
+2023-03-19 15:44:51 +0000 UTC
+2023-03-19 15:44:53 +0000 UTC
+2023-03-19 15:44:55 +0000 UTC
+2023-03-19 15:44:57 +0000 UTC
+Secret message is: 'You can find the source code here: [https://github.com/docker-hy](https://github.com/docker-hy)'
+2023-03-19 15:44:59 +0000 UTC
+2023-03-19 15:45:01 +0000 UTC
+2023-03-19 15:45:03 +0000 UTC
+2023-03-19 15:45:05 +0000 UTC
+2023-03-19 15:45:07 +0000 UTC
+Secret message is: 'You can find the source code here: [https://github.com/docker-hy](https://github.com/docker-hy)'
+2023-03-19 15:45:09 +0000 UTC
+2023-03-19 15:45:11 +0000 UTC
+^C
+/usr/src/app # exit
