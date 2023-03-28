@@ -5,8 +5,8 @@ WORKDIR /usr/src/app
 RUN apt -y update
 RUN apt install -y curl
 
-COPY [new.sh](http://new.sh/) .
+COPY new.sh .
 
-RUN chmod +x [new.sh](http://new.sh/)
+RUN chmod +x new.sh
 
 CMD ./new.sh
