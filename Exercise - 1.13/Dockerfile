@@ -2,7 +2,7 @@ FROM ubuntu:20.04
 
 COPY . .
 RUN apt-get update && apt install -y wget
-RUN wget -c [https://go.dev/dl/go1.20.2.linux-amd64.tar.gz](https://go.dev/dl/go1.20.2.linux-amd64.tar.gz)
+RUN wget -c https://go.dev/dl/go1.20.2.linux-amd64.tar.gz
 RUN tar -C /usr/local -xzf go1.20.2.linux-amd64.tar.gz
 
 ENV PATH /usr/local/go/bin:$PATH
